@@ -30,7 +30,7 @@ app.use(methodOverride("_method"));
 
 // HOMEPAGE
 app.get("/", (req, res) => {
-  res.json({ message: "express api app is working" });
+  res.json({ message: "Flashcard express api app is working" });
 });
 
 app.use("/api/auth", require("./controllers/authController.js"));
