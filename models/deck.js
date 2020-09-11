@@ -20,7 +20,9 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Deck.init({
-    name: DataTypes.STRING
+    title: DataTypes.STRING,
+    type: DataTypes.STRING,
+    category: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Deck',
