@@ -9,27 +9,34 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       deckId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       numCorrectFirstPass: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       numCorrectLastPass: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       numCardsInDeck: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       }
     });
   },
