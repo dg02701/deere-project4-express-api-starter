@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Card.init({
-    title: DataTypes.STRING,
     deckId: DataTypes.INTEGER,
     prompt: DataTypes.STRING,
     question: DataTypes.STRING,
