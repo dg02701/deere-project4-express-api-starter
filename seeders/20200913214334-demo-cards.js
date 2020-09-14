@@ -11,7 +11,8 @@ module.exports = {
           question: "4 + 5 = ?",
           answer: "9",
           source: "",
-        },        {
+        },        
+        {
           deckId: 2,
           prompt: "Who said?",
           question: "Die Hard is a Christmas movie",
@@ -28,7 +29,7 @@ module.exports = {
         {
           deckId: 2,
           prompt: "Who said?",
-          question: "They're gonna need some more FBI guys, I guess.",
+          question: "gonna need some more FBI guys, I guess.",
           answer: "Deputy Chief Dwayne T. Robinson",
           source: "",
         },

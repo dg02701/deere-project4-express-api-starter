@@ -9,4 +9,10 @@ router.get("/profile/:id", async (req, res) => {
   res.json({ user });
 });
 
+// GET ALL USERS
+router.get("/", async (res, req) => {
+  let users = await UserModel.findAll();
+  res.json({ users });
+});
+
 module.exports = router;
