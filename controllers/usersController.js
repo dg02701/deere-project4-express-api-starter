@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const UserModel = require("../models").User;
+// had to require Deck when added GET USER HISTORY route
 const DeckModel = require("../models").Deck;
 
 // GET USERS PROFILE
@@ -11,8 +12,8 @@ router.get("/profile/:id", async (req, res) => {
   res.json({ user });
 });
 
-//GET DECKs for a specific user PROFILE, a HISTORY for players
-//This route returns the decks that a user has played
+//GET USER HISTORY (DECKs for a specific user PROFILE, a HISTORY for users)
+//This route returns the decks that a user has played with stats
 router.get("/history/:id", async (req, res) => {
   let userDecks = await UserModel.findByPk(req.params.id, {
     include: [{ model: DeckModel, attributes: ["id", "title"] }],

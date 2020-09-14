@@ -14,11 +14,12 @@ router.get("/profile/:id", async (req, res) => {
     let deckUsed = await DeckModel.findByPk(req.params.id, {
       include: [{ model: UserModel, attributes: ["id", "name"] }],
     });
-    res.json({ artist: deckUsed });
+    res.json({ deckUsed });
   });
 
+
 //GET ALL DECKS
-//localhost:3000/api/decks
+//GET http://localhost:3000/api/decks
 router.get("/", async (req, res) => {
     let decks = await DeckModel.findAll({
         include: CardModel,
@@ -26,6 +27,23 @@ router.get("/", async (req, res) => {
     res.json({ decks });
   });
 
+// CREATE A NEW DECK
+// POST http://localhost:3000/api/decks
+router.post("/", async (req, res) => {
+  let newDeck = await DeckModel.create(req.body);
+  res.json({ newDeck });
+});
 
+//DELETE A DECK  !!!do not use if deck has history!!!
+// Body - 'none'
+// DELETE http://localhost:3000/api/decks/:id
+router.delete("/:id", async (req, res) => {
+    await DeckModel.destroy({
+      where: { id: req.params.id },
+    });
+    res.json({
+      message: `Deck with id ${req.params.id} was deleted`,
+    });
+  });
 
 module.exports = router;
