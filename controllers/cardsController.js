@@ -11,5 +11,4 @@ router.get("/", async(req, res) => {
     res.json({ cards });
 });
 
-
 module.exports = router;

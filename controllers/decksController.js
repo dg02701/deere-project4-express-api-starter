@@ -43,6 +43,14 @@ router.post("/", async (req, res) => {
   res.json({ newDeck });
 });
 
+// CREATE A NEW CARD for a DECK
+// POST http://localhost:3000/api/decks/:id/newcard
+router.post("/:id/newcard", async (req, res) => {
+    let deck = await DeckModel.findByPk(req.params.id);
+    let card = await deck.createCard(req.body);
+    res.json({ deck, card });
+  });
+
 //DELETE A DECK  !!!do not use if deck has history!!!
 // Body - 'none'
 // DELETE http://localhost:3000/api/decks/:id
