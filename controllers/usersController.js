@@ -14,6 +14,7 @@ router.get("/profile/:id", async (req, res) => {
 
 //GET USER HISTORY (DECKs for a specific user PROFILE, a HISTORY for users)
 //This route returns the decks that a user has played with stats
+//GET http://localhost:3000/api/users/history/1
 router.get("/history/:id", async (req, res) => {
   let userDecks = await UserModel.findByPk(req.params.id, {
     include: [{ model: DeckModel, attributes: ["id", "title"] }],

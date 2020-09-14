@@ -27,6 +27,15 @@ router.get("/", async (req, res) => {
     res.json({ decks });
   });
 
+//GET ALL cards in a deck
+//GET http://localhost:3000/api/decks/cardsInDeck/1
+router.get("/cardsInDeck/:id", async (req, res) => {
+    let deck = await DeckModel.findByPk(req.params.id, {
+        include: CardModel,
+    });
+    res.json({ deck });
+  });
+
 // CREATE A NEW DECK
 // POST http://localhost:3000/api/decks
 router.post("/", async (req, res) => {
