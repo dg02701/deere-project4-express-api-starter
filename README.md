@@ -1,5 +1,21 @@
-## Deere Project 4 Starter Code
+## Deere Project 4 - BACKEND 
+## Overview
+Project 4 is a fullstack aplication consiting of a Express/Node.js Backend (BE) and a React-App Frontend (FE)
 
+This README.md is for the BACKEND poriton.
+
+## Github repo links
+FE https://github.com/dg02701/project4_frontend
+BE https://github.com/dg02701/deere-project4-express-api-starter
+
+## Heroku app links
+FE - 
+BE - 
+
+## ERD for Backend
+
+
+## Starter Code from GA project prompt
 This app serves JSON data only. There are no views. You'll build a React app to communicate with this Express app. Since there are no views, you'll want to use Postman to test that your endpoints are working before writing the React code.
 
 Note - this app has no views and each endpoint is prefaced with `/api`.
