@@ -33,9 +33,9 @@ router.get("/", async (req, res) => {
 //     res.json({ deck });
 //   });
 
-// CREATE A NEW Entry in USERDECKS - new row represents history/stats for a user playing a
-//      a specific deck.
-// POST http://localhost:3000/api/decks
+// CREATE A NEW Entry in USERDECKS - a new row represents 
+// history/stats for A user playing A specific deck.
+// POST http://localhost:3000/api//userdecks
 router.post("/", async (req, res) => {
   let newUserHistory = await UserDeckModel.create(req.body);
   res.json({ newUserHistory });
