@@ -52,15 +52,18 @@ router.post("/:id/newcard", async (req, res) => {
   });
 
 //DELETE A DECK  !!!do not use if deck has history!!!
+//commented out due to dangers.
+// If needed to use DELETE route, look to making the model "Paranoid"
+// https://sequelize.org/master/manual/paranoid.html
 // Body - 'none'
 // DELETE http://localhost:3000/api/decks/:id
-router.delete("/:id", async (req, res) => {
-    await DeckModel.destroy({
-      where: { id: req.params.id },
-    });
-    res.json({
-      message: `Deck with id ${req.params.id} was deleted`,
-    });
-  });
+// router.delete("/:id", async (req, res) => {
+//     await DeckModel.destroy({
+//       where: { id: req.params.id },
+//     });
+//     res.json({
+//       message: `Deck with id ${req.params.id} was deleted`,
+//     });
+//   });
 
 module.exports = router;
